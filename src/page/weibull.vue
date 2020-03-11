@@ -40,7 +40,7 @@ export default {
         const res = await fetch("api/weibull",{
             method:"POST",
             headers:{
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json;charset=UTF-8'
                 },
                 body:JSON.stringify(data),
                         })
@@ -48,6 +48,7 @@ export default {
             this.webfigure = 'error request'
         }else {
             this.webfigure = await res.body.text();
+            console.log(this.webfigure)
         }
       } catch (error) {
           void error
