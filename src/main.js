@@ -2,7 +2,7 @@ import Vue from 'vue/dist/vue'
 import VueRouter from 'vue-router'
 import routes from './router/router'
 import store from './store/'
-import {Menu, Icon, Form, Input, Layout, Button, Checkbox} from 'ant-design-vue'
+import {Menu, Icon, Form, Input, Layout, Button, Checkbox, Spin} from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
 Vue.use(Menu)
@@ -12,6 +12,7 @@ Vue.use(Input)
 Vue.use(Layout)
 Vue.use(Button)
 Vue.use(Checkbox)
+Vue.use(Spin)
 
 Vue.use(VueRouter)
 
