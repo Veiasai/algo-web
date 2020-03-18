@@ -1,21 +1,14 @@
 <template>
-<a-spin :spinning="spinning">
-  <a-form :form="form" @submit="handleSubmit">
-      <div>input data: 1, 2, 3</div>
-    <a-form-item label="Data" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
-      <a-input
-        v-decorator="['data', { rules: [{ required: true, message: 'Please input your data!' }] }]"
-      />
-    </a-form-item>
-    
-    <a-form-item :wrapper-col="{ span: 12, offset: 5 }">
-      <a-button type="primary" html-type="submit">
-        Submit
-      </a-button>
-    </a-form-item>
-
-    <div v-html="webfigure"></div>
-  </a-form>
+<a-spin id="weibull_spin" :spinning="spinning">
+    <div style="float: left; font-weight: bold;">故障分布函数拟合</div>
+    <br/>
+    <div style="float: left">请输入历史故障数据，从小到大排列，用英文逗号分隔</div>
+    <a-input-search placeholder="input data" @search="onSearch" size="large">
+    <a-button slot="enterButton" sytle="border-radius:5px;">参数拟合</a-button>
+    </a-input-search>
+    <div style="height: 16px;background: rgba(255, 255, 255, 0.2);margin: 16px;">
+    </div>
+    <div width='560' height='420' v-html="webfigure"></div>
   </a-spin>
 </template>
 
@@ -30,12 +23,11 @@ export default {
     };
   },
   methods: {
-    async handleSubmit(e) {
-      e.preventDefault();
+    async onSearch(value) {
       this.spinning = true;
       try {
         var data = {
-            'data': '[' + this.form.getFieldValue('data') + ']'
+            'data': JSON.parse('[' + value + ']')
         }
         const res = await fetch("api/weibull",{
             method:"POST",
@@ -47,7 +39,7 @@ export default {
         if (!res.ok) {
             this.webfigure = 'error request'
         }else {
-            this.webfigure = await res.body.text();
+            this.webfigure = await res.text();
             console.log(this.webfigure)
         }
       } catch (error) {
