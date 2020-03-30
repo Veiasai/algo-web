@@ -21,21 +21,21 @@
         <a-row>
             <a-col :span="10">
                 <div style="float: left">计算结果</div>
-                <a-textarea :rows="6" disabled :value="x" />
+                <a-textarea style="font-weight: bold"  :rows="6" disabled :value="x" />
             </a-col>
             <a-col :span="2" />
             <a-col :span="10">
                 <a-row>
                     <div style="float: left">真实值与拟合值偏差</div>
-                    <a-textarea :rows="4" disabled :value="fval" />
+                    <a-textarea style="font-weight: bold" :rows="4" disabled :value="fval" />
                 </a-row>
                 <a-row>
                     <div style="float: left">出口条件</div>
-                    <a-textarea :rows="1" disabled :value="status" />
+                    <a-textarea style="font-weight: bold" :rows="1" disabled :value="status" />
                 </a-row>
                 <a-row>
                     <div style="float: left">调试信息</div>
-                    <a-textarea :rows="2" disabled :value="msg" />
+                    <a-textarea style="font-weight: bold" :rows="2" disabled :value="msg" />
                 </a-row>
             </a-col>
         </a-row>
@@ -48,7 +48,7 @@
         data() {
             return {
                 spinning: false,
-                x: "123",
+                x: "",
                 status: "",
                 func: "",
                 initial: "",
