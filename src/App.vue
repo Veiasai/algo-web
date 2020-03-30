@@ -6,7 +6,7 @@
         <algoMenu/>
       </a-layout-sider>
       <a-layout>
-        <a-layout-header style="background: #3ba0e9; padding: 0; font-size: 20px;">基于模型的规则设计器</a-layout-header>
+        <a-layout-header style="background: #fff; padding: 0; font-size: 20px;">基于模型的规则设计器</a-layout-header>
         <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
           <router-view/>
         </a-layout-content>

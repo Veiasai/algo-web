@@ -4,7 +4,7 @@
       <a-sub-menu key="sub1">
         <span slot="title"><a-icon type="mail" /><span>基础运算算法</span></span>
         <a-menu-item key="gray">灰度预测</a-menu-item>
-        <a-menu-item key="3">Option 3</a-menu-item>
+        <a-menu-item key="solve">多元方程组求解</a-menu-item>
         <a-menu-item key="4">Option 4</a-menu-item>
       </a-sub-menu>
       <a-sub-menu key="sub2">

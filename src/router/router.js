@@ -2,6 +2,7 @@ import App from '../App'
 
 const gray = r => require.ensure([], () => r(require('../page/gray')), 'gray')
 const weibull = r => require.ensure([], () => r(require('../page/weibull')), 'weibull')
+const solve = r => require.ensure([], () => r(require('../page/solve')), 'solve')
 
 export default [{
     path: '/',
@@ -15,6 +16,10 @@ export default [{
         {
             path: '/weibull',
             component: weibull
+        },
+        {
+            path: '/solve',
+            component: solve
         },
         {
             path: '*'
