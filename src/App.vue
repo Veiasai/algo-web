@@ -7,7 +7,7 @@
       </a-layout-sider>
       <a-layout>
         <a-layout-header style="background: #fff; padding: 0; font-size: 20px;">基于模型的规则设计器</a-layout-header>
-        <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }">
+        <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '450px' }">
           <router-view/>
         </a-layout-content>
         <a-layout-footer style="padding: 0">Powered By Veiasai@2020</a-layout-footer>

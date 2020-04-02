@@ -9,7 +9,7 @@
       </a-sub-menu>
       <a-sub-menu key="sub2">
         <span slot="title"><a-icon type="appstore" /><span>时序算法</span></span>
-        <a-menu-item key="5">Option 5</a-menu-item>
+        <a-menu-item key="arma">ARMA模型</a-menu-item>
         <a-menu-item key="6">Option 6</a-menu-item>
       </a-sub-menu>
       <a-sub-menu key="sub3">
