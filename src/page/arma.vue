@@ -21,7 +21,7 @@
         </a-row>
         <a-divider />
         <a-row>
-            <div style="float: left">预测结果</div>
+            <div style="float: left">预测结果</div> <a v-if="predictionBlob !== null" download="prediction.csv" :href="predictionBlob">保存到文件</a>
             <a-textarea style="font-weight: bold"  :rows="6" disabled :value="prediction" />
         </a-row>
         <a-row>
@@ -41,6 +41,13 @@
                 prediction: "",
                 imgData: "",
                 fileList: [],
+            }
+        },
+        computed: {
+            predictionBlob() {
+                if (this.prediction == '')
+                    return null
+                return window.URL.createObjectURL(new Blob([this.prediction], {type: "text/plain"}));
             }
         },
         methods: {
@@ -75,7 +82,7 @@
                         'data': btoa(e.target.result),
                         'length': this.length
                     }
-                    const res = await fetch("apiy/arma", {
+                    const res = await fetch("http://101.200.89.30:9990/apiy/arma", {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json;charset=UTF-8'
