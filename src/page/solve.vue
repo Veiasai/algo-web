@@ -80,7 +80,7 @@
                         this.fval = String(ret['info']['fvec'])
                         this.msg = String(ret['msg'])
                     } else {
-                        message.info(res.statusText)
+                        message.info(res.body)
                     }
                 } catch (error) {
                     console.log(error)

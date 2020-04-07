@@ -4,6 +4,7 @@ const gray = r => require.ensure([], () => r(require('../page/gray')), 'gray')
 const weibull = r => require.ensure([], () => r(require('../page/weibull')), 'weibull')
 const solve = r => require.ensure([], () => r(require('../page/solve')), 'solve')
 const arma = r => require.ensure([], () => r(require('../page/arma')), 'arma')
+const runge = r => require.ensure([], () => r(require('../page/runge')), 'runge')
 
 export default [{
     path: '/',
@@ -25,6 +26,10 @@ export default [{
         {
             path: '/arma',
             component: arma
+        },
+        {
+            path: '/runge',
+            component: runge
         },
         {
             path: '*'

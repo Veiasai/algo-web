@@ -94,7 +94,7 @@
                         this.prediction = ret['prediction']
                         this.imgData = ret['img']
                     } else {
-                        message.info(res.statusText)
+                        message.info(res.body)
                     }
                 } catch (error) {
                     console.log(error)
